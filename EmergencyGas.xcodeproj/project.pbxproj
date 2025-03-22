@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		63FA77B72D8F7CE800DF5C0C /* CocoaMQTT in Frameworks */ = {isa = PBXBuildFile; productRef = 63FA77B62D8F7CE800DF5C0C /* CocoaMQTT */; };
+		63FA77B92D8F7CE800DF5C0C /* CocoaMQTTWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 63FA77B82D8F7CE800DF5C0C /* CocoaMQTTWebSocket */; };
+		63FA77BC2D8F7D9600DF5C0C /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 63FA77BB2D8F7D9600DF5C0C /* Starscream */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		63A6BB892D88E53C009B191C /* EmergencyGas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmergencyGas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +42,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63FA77B92D8F7CE800DF5C0C /* CocoaMQTTWebSocket in Frameworks */,
+				63FA77B72D8F7CE800DF5C0C /* CocoaMQTT in Frameworks */,
+				63FA77BC2D8F7D9600DF5C0C /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +87,9 @@
 			);
 			name = EmergencyGas;
 			packageProductDependencies = (
+				63FA77B62D8F7CE800DF5C0C /* CocoaMQTT */,
+				63FA77B82D8F7CE800DF5C0C /* CocoaMQTTWebSocket */,
+				63FA77BB2D8F7D9600DF5C0C /* Starscream */,
 			);
 			productName = EmergencyGas;
 			productReference = 63A6BB892D88E53C009B191C /* EmergencyGas.app */;
@@ -107,6 +119,10 @@
 			);
 			mainGroup = 63A6BB802D88E53C009B191C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				63FA77B52D8F7CE800DF5C0C /* XCRemoteSwiftPackageReference "CocoaMQTT" */,
+				63FA77BA2D8F7D9600DF5C0C /* XCRemoteSwiftPackageReference "Starscream" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 63A6BB8A2D88E53C009B191C /* Products */;
 			projectDirPath = "";
@@ -150,7 +166,6 @@
 				INFOPLIST_FILE = EmergencyGas/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -178,7 +193,6 @@
 				INFOPLIST_FILE = EmergencyGas/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -335,6 +349,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		63FA77B52D8F7CE800DF5C0C /* XCRemoteSwiftPackageReference "CocoaMQTT" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/emqx/CocoaMQTT.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.1.8;
+			};
+		};
+		63FA77BA2D8F7D9600DF5C0C /* XCRemoteSwiftPackageReference "Starscream" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daltoniam/Starscream";
+			requirement = {
+				kind = exactVersion;
+				version = 4.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		63FA77B62D8F7CE800DF5C0C /* CocoaMQTT */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63FA77B52D8F7CE800DF5C0C /* XCRemoteSwiftPackageReference "CocoaMQTT" */;
+			productName = CocoaMQTT;
+		};
+		63FA77B82D8F7CE800DF5C0C /* CocoaMQTTWebSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63FA77B52D8F7CE800DF5C0C /* XCRemoteSwiftPackageReference "CocoaMQTT" */;
+			productName = CocoaMQTTWebSocket;
+		};
+		63FA77BB2D8F7D9600DF5C0C /* Starscream */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63FA77BA2D8F7D9600DF5C0C /* XCRemoteSwiftPackageReference "Starscream" */;
+			productName = Starscream;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 63A6BB812D88E53C009B191C /* Project object */;
 }
