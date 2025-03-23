@@ -35,6 +35,13 @@ class ViewController: UIViewController {
         return label
     }()
     
+    private lazy var spacer1: UIView = {
+        let spacer1 = UIView()
+        spacer1.translatesAutoresizingMaskIntoConstraints = false
+        
+        return spacer1
+    }()
+    
     private lazy var buttonLabel: UIButton = {
         let button = UIButton()
         button.setTitle("SOS", for: .normal)
@@ -48,7 +55,7 @@ class ViewController: UIViewController {
     }()
     
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [statusView, statusLabel, buttonLabel])
+        let stackView = UIStackView(arrangedSubviews: [statusView, statusLabel, spacer1 ,buttonLabel])
         stackView.axis = .vertical
         stackView.spacing = 20
         stackView.alignment = .center
@@ -93,7 +100,8 @@ class ViewController: UIViewController {
             statusView.widthAnchor.constraint(equalToConstant: 100),
             statusView.heightAnchor.constraint(equalTo: statusView.widthAnchor),
             buttonLabel.widthAnchor.constraint(equalToConstant: 300),
-            buttonLabel.heightAnchor.constraint(equalToConstant: 60)
+            buttonLabel.heightAnchor.constraint(equalToConstant: 60),
+            spacer1.heightAnchor.constraint(equalToConstant: 230)
         ])
     }
     
