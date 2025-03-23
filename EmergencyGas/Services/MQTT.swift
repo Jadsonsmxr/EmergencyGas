@@ -57,9 +57,11 @@ extension ViewController: CocoaMQTTDelegate {
         TRACE("message: \(message.string.description), id: \(id)")
         let mensagemRecebida = message.string ?? "default"
         let novaCor = trocadeCor(mensagemRecebida)
+        let novoStatus = trocadeStatus(mensagemRecebida)
         
         DispatchQueue.main.async {
                 self.statusView.backgroundColor = novaCor
+                self.statusLabel.text = novoStatus
             }
         
         

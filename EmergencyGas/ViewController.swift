@@ -25,9 +25,9 @@ class ViewController: UIViewController {
         return view
     }()
     
-    private lazy var statusLabel: UILabel = {
+    lazy var statusLabel: UILabel = {
         let label = UILabel()
-        label.text = "Status: Seguro"
+        label.text = "Ambiente Seguro"
         label.font = .systemFont(ofSize: 22, weight: .light)
         label.textColor = .white
         label.textAlignment = .center

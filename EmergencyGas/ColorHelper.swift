@@ -20,3 +20,15 @@ func trocadeCor(_ message: String) -> UIColor {
     }
 }
 
+func trocadeStatus(_ message: String) -> String {
+    switch message.lowercased() {
+    case "green":
+        return "Ambiente Seguro"
+    case "red":
+        return "Vazamento Detectado"
+    case "yellow":
+        return "Monitorando"
+    default:
+        return "Ambiente Seguro"
+    }
+}
