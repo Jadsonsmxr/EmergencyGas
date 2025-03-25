@@ -10,7 +10,7 @@ import UIKit
 
 let myCert = "myCert"
 
-extension ViewController: CocoaMQTTDelegate {
+extension HomeViewController: CocoaMQTTDelegate {
 
     
     func mqttUrlSession(_ mqtt: CocoaMQTT, didReceiveTrust trust: SecTrust, didReceiveChallenge challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void){
@@ -88,12 +88,12 @@ extension ViewController: CocoaMQTTDelegate {
     func mqttDidDisconnect(_ mqtt: CocoaMQTT, withError err: Error?) {
         TRACE("\(err.description)")
     }
-}
 
 
 
 
-extension ViewController {
+
+
     func TRACE(_ message: String = "", fun: String = #function) {
         let names = fun.components(separatedBy: ":")
         var prettyName: String

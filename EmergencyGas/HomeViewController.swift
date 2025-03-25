@@ -7,7 +7,7 @@
 import UIKit
 import CocoaMQTT
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     private lazy var titleLabel: UILabel = {
         let title = UILabel()
@@ -54,8 +54,21 @@ class ViewController: UIViewController {
         return button
     }()
     
+    private lazy var buttonInstruction: UIButton = {
+        let buttonInstruction = UIButton()
+        buttonInstruction.setTitle("Instruções", for: .normal)
+        buttonInstruction.backgroundColor = .buttonBackground
+        buttonInstruction.setTitleColor(.white, for: .normal)
+        buttonInstruction.layer.cornerRadius = 20
+        buttonInstruction.titleLabel?.font = .boldSystemFont(ofSize: 25)
+        buttonInstruction.translatesAutoresizingMaskIntoConstraints = false
+        buttonInstruction.addTarget(self, action: #selector(buttonInstructionPressed), for: .touchUpInside)
+        return buttonInstruction
+    }()
+    
+    
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [statusView, statusLabel, spacer1 ,buttonLabel])
+        let stackView = UIStackView(arrangedSubviews: [statusView, statusLabel, spacer1 ,buttonLabel, buttonInstruction])
         stackView.axis = .vertical
         stackView.spacing = 20
         stackView.alignment = .center
@@ -101,7 +114,9 @@ class ViewController: UIViewController {
             statusView.heightAnchor.constraint(equalTo: statusView.widthAnchor),
             buttonLabel.widthAnchor.constraint(equalToConstant: 300),
             buttonLabel.heightAnchor.constraint(equalToConstant: 60),
-            spacer1.heightAnchor.constraint(equalToConstant: 230)
+            spacer1.heightAnchor.constraint(equalToConstant: 200),
+            buttonInstruction.widthAnchor.constraint(equalToConstant: 300),
+            buttonInstruction.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
     
@@ -117,5 +132,8 @@ class ViewController: UIViewController {
         } else {
             print("Não é possível fazer a ligação.")
         }
+    }
+    @objc private func buttonInstructionPressed () {
+        navigationController?.pushViewController(InstructionViewController(), animated: true)
     }
 }
