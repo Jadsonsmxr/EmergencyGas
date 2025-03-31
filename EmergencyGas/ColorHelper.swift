@@ -32,3 +32,16 @@ func trocadeStatus(_ message: String) -> String {
         return "Ambiente Seguro"
     }
 }
+
+func Notification(_ message: String) {
+    switch message.lowercased() {
+        
+    case "yellow":
+        sendNotification(title: "⚠️ Alerta!", body: "Possível vazamento de gás detectado! Verifique imediatamente.")
+    case "red":
+        sendNotification(title: "🆘 Alerta!", body: "Um vazamento de gás foi detectado!")
+    default:
+        print ("Sem necessidade de notificação")
+        
+    }
+}

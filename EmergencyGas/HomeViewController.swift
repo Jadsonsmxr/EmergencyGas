@@ -96,6 +96,9 @@ class HomeViewController: UIViewController {
         
         addSubviews()
         setupConstraints()
+        
+
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
