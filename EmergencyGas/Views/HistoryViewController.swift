@@ -15,11 +15,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Histórico de Alertas"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.largeTitleTextAttributes = [
-            NSAttributedString.Key.foregroundColor : UIColor.white
-        ]
+        titleBar()
         
         
         tabela.backgroundColor = .clear
@@ -32,6 +28,14 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         tabela.register(UITableViewCell.self, forCellReuseIdentifier: "celula")
         tabela.frame = view.bounds
         view.addSubview(tabela)
+    }
+    
+    private func titleBar () {
+        let titleLabel = UILabel()
+        titleLabel.text = "Histórico de Alertas"
+        titleLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold) // aqui você muda o tamanho
+        titleLabel.textColor = .white
+        navigationItem.titleView = titleLabel
     }
     
    
