@@ -58,11 +58,15 @@ extension HomeViewController: CocoaMQTTDelegate {
         let mensagemRecebida = message.string ?? "default"
         let novaCor = trocadeCor(mensagemRecebida)
         let novoStatus = trocadeStatus(mensagemRecebida)
+
         Notification(mensagemRecebida)
         DispatchQueue.main.async {
                 self.statusView.backgroundColor = novaCor
                 self.statusLabel.text = novoStatus
             }
+        
+        AlertaManager.shared.adicionarAlerta(nivel: 435.0, mensagem: novoStatus)
+
         
         
         

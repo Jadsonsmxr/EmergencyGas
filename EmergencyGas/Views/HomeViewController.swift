@@ -66,9 +66,21 @@ class HomeViewController: UIViewController {
         return buttonInstruction
     }()
     
+    private lazy var buttonHistory: UIButton = {
+        let buttonHistory = UIButton()
+        buttonHistory.setTitle("Histórico", for: .normal)
+        buttonHistory.backgroundColor = .buttonBackground
+        buttonHistory.setTitleColor(.white, for: .normal)
+        buttonHistory.layer.cornerRadius = 20
+        buttonHistory.titleLabel?.font = .boldSystemFont(ofSize: 25)
+        buttonHistory.translatesAutoresizingMaskIntoConstraints = false
+        buttonHistory.addTarget(self, action: #selector(buttonHistoryPressed), for: .touchUpInside)
+        return buttonHistory
+    }()
+    
     
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [statusView, statusLabel, spacer1 ,buttonLabel, buttonInstruction])
+        let stackView = UIStackView(arrangedSubviews: [statusView, statusLabel, spacer1 ,buttonLabel, buttonInstruction, buttonHistory])
         stackView.axis = .vertical
         stackView.spacing = 20
         stackView.alignment = .center
@@ -117,9 +129,11 @@ class HomeViewController: UIViewController {
             statusView.heightAnchor.constraint(equalTo: statusView.widthAnchor),
             buttonLabel.widthAnchor.constraint(equalToConstant: 300),
             buttonLabel.heightAnchor.constraint(equalToConstant: 60),
-            spacer1.heightAnchor.constraint(equalToConstant: 200),
+            spacer1.heightAnchor.constraint(equalToConstant: 130),
             buttonInstruction.widthAnchor.constraint(equalToConstant: 300),
-            buttonInstruction.heightAnchor.constraint(equalToConstant: 60)
+            buttonInstruction.heightAnchor.constraint(equalToConstant: 60),
+            buttonHistory.widthAnchor.constraint(equalToConstant: 300),
+            buttonHistory.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
     
@@ -136,7 +150,12 @@ class HomeViewController: UIViewController {
             print("Não é possível fazer a ligação.")
         }
     }
+    
     @objc private func buttonInstructionPressed () {
         navigationController?.pushViewController(InstructionViewController(), animated: true)
+    }
+    
+    @objc private func buttonHistoryPressed () {
+        navigationController?.pushViewController(HistoryViewController(), animated: true)
     }
 }
