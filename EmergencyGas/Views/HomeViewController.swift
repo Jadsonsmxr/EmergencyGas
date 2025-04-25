@@ -69,7 +69,7 @@ class HomeViewController: UIViewController {
     private lazy var buttonHistory: UIButton = {
         let buttonHistory = UIButton()
         buttonHistory.setTitle("Histórico", for: .normal)
-        buttonHistory.backgroundColor = .buttonBackground
+        buttonHistory.backgroundColor = .blue
         buttonHistory.setTitleColor(.white, for: .normal)
         buttonHistory.layer.cornerRadius = 20
         buttonHistory.titleLabel?.font = .boldSystemFont(ofSize: 25)
@@ -123,15 +123,20 @@ class HomeViewController: UIViewController {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
             stackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 40),
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
             statusView.widthAnchor.constraint(equalToConstant: 100),
             statusView.heightAnchor.constraint(equalTo: statusView.widthAnchor),
+            
             buttonLabel.widthAnchor.constraint(equalToConstant: 300),
             buttonLabel.heightAnchor.constraint(equalToConstant: 60),
+            
             spacer1.heightAnchor.constraint(equalToConstant: 130),
             buttonInstruction.widthAnchor.constraint(equalToConstant: 300),
             buttonInstruction.heightAnchor.constraint(equalToConstant: 60),
+            
             buttonHistory.widthAnchor.constraint(equalToConstant: 300),
             buttonHistory.heightAnchor.constraint(equalToConstant: 60)
         ])

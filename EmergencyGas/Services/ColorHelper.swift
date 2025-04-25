@@ -20,6 +20,8 @@ func trocadeCor(_ message: String) -> UIColor {
     }
 }
 
+
+
 func trocadeStatus(_ message: String) -> String {
     switch message.lowercased() {
     case "green":

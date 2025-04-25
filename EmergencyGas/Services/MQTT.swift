@@ -63,11 +63,15 @@ extension HomeViewController: CocoaMQTTDelegate {
         DispatchQueue.main.async {
                 self.statusView.backgroundColor = novaCor
                 self.statusLabel.text = novoStatus
+                
+            
             }
-        
-        AlertaManager.shared.adicionarAlerta(nivel: 435.0, mensagem: novoStatus)
+        if mensagemRecebida != "green" {
+            AlertaManager.shared.adicionarAlerta(mensagem: novoStatus, cor: mensagemRecebida)
+            NotificationCenter.default.post(name: NSNotification.Name("NovoAlerta"), object: nil)
+        }
+       
 
-        
         
         
     }

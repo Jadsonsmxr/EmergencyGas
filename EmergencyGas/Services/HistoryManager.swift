@@ -9,9 +9,10 @@ import Foundation
 
 struct Alerta: Codable {
     let id: UUID
-    let nivel: Float
+    
     let data: Date
     let mensagem: String
+    let cor: String
 }
 
 
@@ -25,8 +26,8 @@ class AlertaManager {
         carregar()
     }
     
-    func adicionarAlerta(nivel: Float, mensagem: String) {
-        let novo = Alerta(id: UUID(), nivel: nivel, data: Date(), mensagem: mensagem)
+    func adicionarAlerta( mensagem: String, cor: String) {
+        let novo = Alerta(id: UUID(), data: Date(), mensagem: mensagem, cor: cor)
         historico.append(novo)
         salvar()
     }
